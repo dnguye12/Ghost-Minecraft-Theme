@@ -268,8 +268,8 @@ production stylesheet in assets/built/screen.css
 }
 
 .has-cover:not(.home-template) .gh-head {
-    background-color: var(--ghost-accent-color);
-    color: #fff;
+    background-color: white;
+    color: black;
 }
 
 .home-template.has-cover .gh-head {
@@ -851,7 +851,7 @@ production stylesheet in assets/built/screen.css
     background-image: none !important;
     background-color: #868686 !important;
     position: relative;
-    margin-top: 76px;
+    margin-top: 0px;
 }
 
 #mcc-event-header {
