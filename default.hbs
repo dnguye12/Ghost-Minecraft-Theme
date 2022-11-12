@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{else match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
+<head>
+
+    {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
+    <title>{{meta_title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
+    this will take care of caching and cache-busting automatically --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
+    it should always be the last tag before the closing head tag --}}
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}{{#is "home"}}{{#unless @custom.show_logo_in_navigation}} no-logo{{/unless}}{{/is}}">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head outer d-flex align-items-center">
+        <nav class="gh-head-inner inner">
+
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                </a>
+                <div class="gh-head-brand-wrapper">
+                    <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
+                    <a class="gh-burger" role="button">
+                        <div class="gh-burger-box">
+                            <div class="gh-burger-inner"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="gh-head-menu">
+                
+                <ul class="nav">
+                    <li class="nav-current"><a href="/">Home</a></li>
+                    <li><a href="/">Forums <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<mask id="mask0_1345_22488" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+							<rect width="20" height="20" fill="#D9D9D9"></rect>
+						</mask>
+						<g mask="url(#mask0_1345_22488)">
+							<path d="M4.31201 17.667C3.75667 17.667 3.28801 17.476 2.90601 17.094C2.52401 16.712 2.33301 16.2433 2.33301 15.688V4.312C2.33301 3.75667 2.52401 3.288 2.90601 2.906C3.28801 2.524 3.75667 2.333 4.31201 2.333H9.10401C9.36801 2.333 9.59734 2.43033 9.79201 2.625C9.98601 2.81967 10.083 3.04867 10.083 3.312C10.083 3.59 9.98601 3.82633 9.79201 4.021C9.59734 4.215 9.36801 4.312 9.10401 4.312H4.31201V15.688H15.688V10.896C15.688 10.632 15.785 10.4027 15.979 10.208C16.1737 10.014 16.41 9.917 16.688 9.917C16.9513 9.917 17.1803 10.014 17.375 10.208C17.5697 10.4027 17.667 10.632 17.667 10.896V15.688C17.667 16.2433 17.476 16.712 17.094 17.094C16.712 17.476 16.2433 17.667 15.688 17.667H4.31201ZM7.58301 12.417C7.38901 12.2363 7.29201 12.0107 7.29201 11.74C7.29201 11.4687 7.38901 11.236 7.58301 11.042L14.312 4.312H12.833C12.5557 4.312 12.3197 4.215 12.125 4.021C11.9303 3.82633 11.833 3.59 11.833 3.312C11.833 3.04867 11.9303 2.81967 12.125 2.625C12.3197 2.43033 12.5557 2.333 12.833 2.333H16.688C16.9513 2.333 17.1803 2.43033 17.375 2.625C17.5697 2.81967 17.667 3.04867 17.667 3.312V7.167C17.667 7.44433 17.5697 7.68033 17.375 7.875C17.1803 8.06967 16.9513 8.167 16.688 8.167C16.41 8.167 16.1737 8.06967 15.979 7.875C15.785 7.68033 15.688 7.44433 15.688 7.167V5.688L8.93801 12.438C8.75734 12.632 8.53501 12.729 8.27101 12.729C8.00701 12.729 7.77767 12.625 7.58301 12.417Z" fill-rule="evenodd"></path>
+						</g>
+					</svg></a></li>
+                    <li><a href="/">Rules <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<mask id="mask0_1345_22488" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+							<rect width="20" height="20" fill="#D9D9D9"></rect>
+						</mask>
+						<g mask="url(#mask0_1345_22488)">
+							<path d="M4.31201 17.667C3.75667 17.667 3.28801 17.476 2.90601 17.094C2.52401 16.712 2.33301 16.2433 2.33301 15.688V4.312C2.33301 3.75667 2.52401 3.288 2.90601 2.906C3.28801 2.524 3.75667 2.333 4.31201 2.333H9.10401C9.36801 2.333 9.59734 2.43033 9.79201 2.625C9.98601 2.81967 10.083 3.04867 10.083 3.312C10.083 3.59 9.98601 3.82633 9.79201 4.021C9.59734 4.215 9.36801 4.312 9.10401 4.312H4.31201V15.688H15.688V10.896C15.688 10.632 15.785 10.4027 15.979 10.208C16.1737 10.014 16.41 9.917 16.688 9.917C16.9513 9.917 17.1803 10.014 17.375 10.208C17.5697 10.4027 17.667 10.632 17.667 10.896V15.688C17.667 16.2433 17.476 16.712 17.094 17.094C16.712 17.476 16.2433 17.667 15.688 17.667H4.31201ZM7.58301 12.417C7.38901 12.2363 7.29201 12.0107 7.29201 11.74C7.29201 11.4687 7.38901 11.236 7.58301 11.042L14.312 4.312H12.833C12.5557 4.312 12.3197 4.215 12.125 4.021C11.9303 3.82633 11.833 3.59 11.833 3.312C11.833 3.04867 11.9303 2.81967 12.125 2.625C12.3197 2.43033 12.5557 2.333 12.833 2.333H16.688C16.9513 2.333 17.1803 2.43033 17.375 2.625C17.5697 2.81967 17.667 3.04867 17.667 3.312V7.167C17.667 7.44433 17.5697 7.68033 17.375 7.875C17.1803 8.06967 16.9513 8.167 16.688 8.167C16.41 8.167 16.1737 8.06967 15.979 7.875C15.785 7.68033 15.688 7.44433 15.688 7.167V5.688L8.93801 12.438C8.75734 12.632 8.53501 12.729 8.27101 12.729C8.00701 12.729 7.77767 12.625 7.58301 12.417Z" fill-rule="evenodd"></path>
+						</g>
+					</svg></a></li>
+                    <li><a href="/">Store <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="currentColor">
+						<path d="M2.99995 2H17C17.55 2 18 1.55 18 1C18 0.45 17.55 0 17 0H2.99995C2.44995 0 1.99995 0.45 1.99995 1C1.99995 1.55 2.44995 2 2.99995 2ZM18.16 3.8C18.07 3.34 17.66 3 17.18 3H2.81995C2.33995 3 1.92995 3.34 1.83995 3.8L0.839951 8.8C0.719951 9.42 1.18995 10 1.81995 10H1.99995V15C1.99995 15.55 2.44995 16 2.99995 16H11C11.55 16 12 15.55 12 15V10H16V15C16 15.55 16.45 16 17 16C17.55 16 18 15.55 18 15V10H18.18C18.81 10 19.28 9.42 19.16 8.8L18.16 3.8ZM9.99995 14H3.99995V10H9.99995V14Z" fill-rule="evenodd"></path>
+					</svg></a></li>
+                </ul>
+            </div>
+            <div class="gh-head-actions">
+                <button class="gh-search" data-ghost-search>{{> "icons/search"}}</button>
+                <div class="gh-social">
+                    {{#if @site.facebook}}
+                        <a class="gh-social-link gh-social-facebook" href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="me noopener">{{> "icons/facebook"}}</a>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <a class="gh-social-link gh-social-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="me noopener">{{> "icons/twitter"}}</a>
+                    {{/if}}
+                </div>
+                {{#if @site.members_enabled}}
+                    {{#unless @member}}
+                        <a class="gh-head-button" href="#/portal/signup" data-portal="signup"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>Subscribe</a>
+                    {{else}}
+                        <a class="gh-head-button" href="#/portal/account" data-portal="account"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg>Account</a>
+                    {{/unless}}
+                {{/if}}
+            </div>
+        </nav>
+    </header>
+
+    <div id="mcc-event-header" class="islands">
+		<div class="mcc-wrapper">
+				<div class="blurred-bg">
+					<video disablepictureinpicture="" disableremoteplayback="" loop="" autoplay="" muted="">
+						<source src="https://xf-cdn.mccisland.net/data/assets/MCCI_Main_Page_Blurred.webm" type="video/webm">
+					</video>
+				</div>
+			<div class="center-wrap">
+				<div class="main-bg">
+					<video disablepictureinpicture="" disableremoteplayback="" loop="" autoplay="" muted="">
+						<source src="https://xf-cdn.mccisland.net/data/assets/MCCI_Main_Page.webm" type="video/webm">
+					</video>
+				</div> 
+                
+				<img src="https://i.ibb.co/tzQW9Hk/Eloria-minecraft-11-11-2022-1.png" alt="Eloria">
+			</div>
+		</div>
+	</div>
+
+    <div id="server-discord-count" class="d-flex">
+        <button class="header__server header__externalLink d-flex justify-content-center align-items-center shadow" id="serverLink">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 25 24" fill="currentColor"><path d="M21.8333 13.3333H3.16667C1.7 13.3333 0.5 14.5333 0.5 16V21.3333C0.5 22.8 1.7 24 3.16667 24H21.8333C23.3 24 24.5 22.8 24.5 21.3333V16C24.5 14.5333 23.3 13.3333 21.8333 13.3333ZM5.83333 21.3333C4.36667 21.3333 3.16667 20.1333 3.16667 18.6667C3.16667 17.2 4.36667 16 5.83333 16C7.3 16 8.5 17.2 8.5 18.6667C8.5 20.1333 7.3 21.3333 5.83333 21.3333ZM21.8333 0H3.16667C1.7 0 0.5 1.2 0.5 2.66667V8C0.5 9.46667 1.7 10.6667 3.16667 10.6667H21.8333C23.3 10.6667 24.5 9.46667 24.5 8V2.66667C24.5 1.2 23.3 0 21.8333 0ZM5.83333 8C4.36667 8 3.16667 6.8 3.16667 5.33333C3.16667 3.86667 4.36667 2.66667 5.83333 2.66667C7.3 2.66667 8.5 3.86667 8.5 5.33333C8.5 6.8 7.3 8 5.83333 8Z" fill-rule="evenodd"></path></svg>
+            <div class="serverLink-desc">
+                <p>SERVER STATUS</p>
+                <h2 class="text--title" id="serverText" data-ip="{{server}}"><span id='serverCount'>0</span> Players Online</h2>
+            </div>
+            <div class="iconBoxed">
+            </div>
+        </button>
+        
+        <a href="{{discord}}" class="header__discord header__externalLink d-flex justify-content-center align-items-center shadow" id="discordLink" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 33 32" fill="currentColor"><g clip-path="url(#clip0_783_5315)"><path d="M18.96 15.24C18.5841 15.2657 18.2335 15.4387 17.9845 15.7215C17.7354 16.0042 17.608 16.3738 17.63 16.75C17.6053 17.1278 17.7314 17.5 17.9808 17.7849C18.2301 18.0699 18.5822 18.2443 18.96 18.27C19.335 18.2393 19.6831 18.0631 19.9297 17.779C20.1764 17.4949 20.3022 17.1256 20.28 16.75C20.3021 16.3755 20.176 16.0073 19.9291 15.7248C19.6822 15.4423 19.3341 15.2682 18.96 15.24Z" fill-rule="evenodd"></path><path d="M14.0399 15.24C13.6658 15.2682 13.3177 15.4423 13.0708 15.7248C12.8239 16.0073 12.6978 16.3755 12.7199 16.75C12.6951 17.1262 12.8199 17.497 13.0671 17.7816C13.3143 18.0663 13.6639 18.2418 14.0399 18.27C14.4176 18.2443 14.7698 18.0699 15.0191 17.7849C15.2684 17.5 15.3946 17.1278 15.3699 16.75C15.3918 16.3738 15.2645 16.0042 15.0154 15.7215C14.7664 15.4387 14.4158 15.2657 14.0399 15.24Z" fill-rule="evenodd"></path><path d="M16.5 2.69995C13.8695 2.69995 11.298 3.47999 9.11087 4.94141C6.9237 6.40283 5.219 8.48001 4.21236 10.9103C3.20571 13.3405 2.94233 16.0147 3.45551 18.5947C3.9687 21.1746 5.2354 23.5444 7.09544 25.4045C8.95548 27.2645 11.3253 28.5312 13.9053 29.0444C16.4852 29.5576 19.1594 29.2942 21.5896 28.2876C24.0199 27.2809 26.0971 25.5762 27.5585 23.389C29.0199 21.2019 29.8 18.6304 29.8 16C29.8013 14.253 29.4582 12.5229 28.7902 10.9087C28.1223 9.29449 27.1427 7.82778 25.9074 6.5925C24.6721 5.35722 23.2054 4.3776 21.5912 3.70968C19.977 3.04176 18.2469 2.69864 16.5 2.69995V2.69995ZM19.91 22.04L19.3 21.22C20.5589 20.7816 21.6824 20.0235 22.56 19.02C20.8319 20.3116 18.7163 20.978 16.56 20.91C14.387 20.9863 12.253 20.3196 10.51 19.02C11.3894 20.0259 12.5167 20.7844 13.78 21.22L13.16 22.04C12.2252 22.008 11.3059 21.7919 10.4548 21.4041C9.60367 21.0163 8.83742 20.4644 8.19996 19.78C8.52996 14.27 10.46 11.46 10.46 11.46C11.5572 10.6455 12.8448 10.1256 14.2 9.94995L14.38 10.32C13.0334 10.6088 11.7938 11.2667 10.8 12.22C12.531 11.2067 14.5042 10.6814 16.51 10.7C18.509 10.6845 20.475 11.2097 22.2 12.22C21.2118 11.2587 19.9698 10.5995 18.62 10.32L18.8 9.94995C20.1691 10.119 21.4712 10.6391 22.58 11.46C22.58 11.46 24.51 14.27 24.85 19.78C23.5673 21.1575 21.7909 21.9702 19.91 22.04Z" fill-rule="evenodd"></path></g><defs><clipPath id="clip0_783_5315"><rect width="26.6" height="26.6" fill="white" transform="translate(3.19995 2.69995)"></rect></clipPath></defs></svg>
+            <div class="discordLink-desc">
+                <p>DISCORD - <span id='discordCount'>0</span> ONLINE</p>
+                <h2 class="text--title">Meet Other People</h2>
+            </div>
+        </a>
+    </div>
+
+    <div class="site-content">
+        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </div>
+
+    {{!-- The global footer at the very bottom of the screen --}}
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <nav class="site-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
+        </div>
+    </footer>
+
+</div>
+{{!-- /.viewport --}}
+
+
+{{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
+script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="{{asset "built/casper.js"}}"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+<script>
+    console.log("counting");
+    try {
+            fetch(`https://api.minetools.eu/ping/{{server}}/{{serverPORT}}`).then(res => res.json()).then(data => setServerCount(data.players.online));
+        } catch { console.log("Unable to fetch server player count from API.") }
+        try {
+            fetch(`https://discord.com/api/v9/invites/UhJ7rTcy?with_counts=true`).then(res => res.json()).then(data => setDiscordCount(data.approximate_presence_count));
+        } catch { console.log("Unable to fetch Discord player count from API.") }
+        function setServerCount(count) {
+            try {
+                document.getElementById("serverCount").innerHTML = count;
+            } catch { console.log("Unable to set server player count.") }
+        }
+        function setDiscordCount(count) {
+            try {
+                document.getElementById("discordCount").innerHTML = count;
+            } catch { console.log("Unable to set Discord player count.") }
+        }
+</script>
+
+{{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
+{{ghost_foot}}
+
+</body>
+</html>
