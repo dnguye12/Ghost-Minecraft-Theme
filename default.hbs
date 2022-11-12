@@ -136,12 +136,30 @@
 
     {{!-- The global footer at the very bottom of the screen --}}
     <footer class="site-footer outer">
+        <div class="mcc-footer-art">
+		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="9">
+		  <defs>
+			<pattern id="bg" patternUnits="userSpaceOnUse" width="40" height="9">
+				<path d="M0 8V0C2.66667 2.66667 10.4 8 20 8C29.6 8 37.3333 2.66667 40 0V8H20H0Z" fill="rgb(10, 11, 12)"></path>
+				<rect y="8" width="40" height="1" fill="rgb(10, 11, 12)"></rect>
+			  </pattern>
+		  </defs>
+		  <rect width="100%" height="100%" fill="url(#bg)"></rect>
+		</svg>
+	</div>
+
         <div class="inner">
+            <div class="mcc-foot-links">
+			<a target="_blank" href="#">Press</a>
+			<a target="_blank" href="#">Terms Of Service</a>
+			<a target="_blank" href="#">Privacy Notice</a>
+			<a href="#">Cookie Policy</a>
+			<a href="#">Help &amp; FAQ</a>
+			<a target="_blank" href="#">Support</a>
+			<a target="_blank" href="#s">Careers</a>
+		    </div>
+            <div class="mcc-foot-misc">
             <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
-            <div><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
         </div>
     </footer>
 
