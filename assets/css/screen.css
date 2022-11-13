@@ -270,6 +270,10 @@ production stylesheet in assets/built/screen.css
 .has-cover:not(.home-template) .gh-head {
     background-color: white;
     color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .home-template.has-cover .gh-head {
@@ -851,7 +855,7 @@ production stylesheet in assets/built/screen.css
     background-image: none !important;
     background-color: #868686 !important;
     position: relative;
-    margin-top: 0px;
+    margin-top: 70px;
 }
 
 #mcc-event-header {
@@ -863,31 +867,7 @@ production stylesheet in assets/built/screen.css
 
 .mcc-wrapper {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
-}
-
-.blurred-bg {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-    background-image: url(:\content\themes\casper\assets\Main-Webm-Image-Blurred.jpg) !important;
-    background-size: cover !important;
-}
-
-.blurred-bg video {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: inline-block;
 }
 
 #mcc-event-header.islands .center-wrap {
@@ -895,7 +875,6 @@ production stylesheet in assets/built/screen.css
     background-size: cover !important;
     position: relative;
     background-image: url(:\content\themes\casper\assets\Main-Webm-Image.jpg) !important;
-    margin-top: 70px;
     margin-bottom: -70px;
     padding: 50px;
     text-align: center;
@@ -933,7 +912,14 @@ production stylesheet in assets/built/screen.css
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    max-width: 650px;
+    max-width: 450px;
+    transition: transform 350ms, filter 350ms;
+    cursor: pointer;
+}
+
+#mcc-event-header .center-wrap>img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 10px #FF0060);
 }
 
 
@@ -951,7 +937,6 @@ production stylesheet in assets/built/screen.css
 
 #serverLink {
     background: #ffa31a;
-    box-shadow: 0px 4px 24px rgb(0 0 0 / 4%);
     border-radius: 6px;
     padding: 16px;
     margin-right: 16px;
@@ -1007,6 +992,20 @@ production stylesheet in assets/built/screen.css
 
 #discordLink:hover {
     background-color: #7B91FF !important;
+}
+
+.modal-content {
+    border-radius: 10px !important;
+}
+
+.modal-body {
+    padding: 15px !important;
+    text-align: center;
+    background-color: #ffa31a;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 10px;
 }
 
 @media (max-width: 775px) {
